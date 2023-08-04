@@ -1,0 +1,113 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - '**/Guardfile'
+    - 'db/schema.rb'
+    - 'Gemfile'
+    - 'bin/*'
+    - 'vendor/**/*'
+
+  NewCops: enable
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/LineLength:
+  Max: 160
+  AllowedPatterns: ['(\s*)# '] # Ignore lines with comments
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/AbcSize:
+  Max: 50
+  Exclude:
+    - 'db/migrate/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Gemfile'
+    - 'spec/**/*'
+    - 'config/**/*'
+    - 'lib/tasks/**/*'
+    - '**/*.jbuilder'
+    - 'db/migrate/**/*'
+
+# TODO: revisit and enable when ready
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - 'db/migrate/**/*'
+    - 'lib/tasks/**/*'
+    - 'spec/schemas/**/*'
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+
+Metrics/PerceivedComplexity:
+  Max: 15
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 25
+
+RSpec/Focus:
+  Enabled: true
+
+RSpec/ImplicitBlockExpectation:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: true
+  Max: 15
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 10
+
+RSpec/VariableName:
+  EnforcedStyle: snake_case
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/RedundantBegin:
+  Enabled: false
+
+Rails/RedundantPresenceValidationOnBelongsTo:
+  Enabled: false
+
+Style/OpenStructUse:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+
